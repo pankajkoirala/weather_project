@@ -1,0 +1,29 @@
+.icon {
+  height: 200px;
+  width: 200px;
+  color: aquamarine;
+}
+.sunny {
+  height: 800px;
+  width: 100%;
+  background-image: url("../assets/cloudy.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 1100px;
+}
+.whethericon {
+  height: 100px;
+  width: 100px;
+  color: rgb(250, 239, 85);
+}
+.temperature {
+  font-size: 50px;
+  margin: 20px;
+}
+.table {
+  height: 100px;
+  width: 600px;
+  background-color: rgb(154, 156, 156);
+}
+.search {
+  margin-right: px;
+}
