@@ -1,10 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import "./homepage.css";
-import { WiDaySunny } from "react-icons/wi";
 import { Table, FormGroup, Label, Input } from "reactstrap";
 
 const WhetherHomepage = (props) => {
-  const [searchCity,setSearchCity]=useState("")
+  const [searchCity, setSearchCity] = useState("");
   let whetherinfo = props.whetherData;
 
   let a = new Date(
@@ -19,7 +18,7 @@ const WhetherHomepage = (props) => {
         <div className="ml-4">
           <h1>Today Weather Forcast</h1>
           <div className="whethericon">
-            <WiDaySunny className="whethericon" />
+           {props.icon}
           </div>
         </div>
         <div className="m-4 search">
@@ -29,12 +28,17 @@ const WhetherHomepage = (props) => {
               type="text"
               name="city"
               placeholder="with a placeholder"
-          fsd
-              onChange={(e)=>{return setSearchCity(e.target.value)}}
-
-
+              onChange={(e) => {
+                return setSearchCity(e.target.value);
+              }}
             />
-            <button onClick={()=>{props.cityName(searchCity)}} >Search</button>
+            <button
+              onClick={() => {
+                props.cityName(searchCity);
+              }}
+            >
+              Search
+            </button>
           </FormGroup>
         </div>
       </div>
