@@ -23,11 +23,12 @@ const WhetherHomepage = (props) => {
         </div>
         <div className="m-4 search">
           <FormGroup>
-            <Label for="exampleEmail">City</Label>
+            <Label className="h4">City</Label>
             <Input
+            placeholder="enter city name"
               type="text"
               name="city"
-              placeholder="with a placeholder"
+             
               onChange={(e) => {
                 return setSearchCity(e.target.value);
               }}
