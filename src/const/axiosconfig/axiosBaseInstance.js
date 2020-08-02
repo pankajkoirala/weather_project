@@ -1,14 +1,12 @@
-import axios from "axios"
-import {BASE_URL,token_key} from "../const"
-import {getLocalStorage} from "../tokenstorage"
+import axios from "axios";
+import { REACT_APP_BACKEND_URL, token_key } from "../const";
 
-let headers={ 'Content-Type': 'application/json'}
+let headers = { "Content-Type": "application/json" };
 
+let AxiosInstance = axios.create({
+  method:"get",
+  base_URL: REACT_APP_BACKEND_URL,
+  headers,
+});
 
-
-  let AxiosInstance =axios.create({
- base_URL:BASE_URL,
-headers
-})
-
-export default AxiosInstance
+export default AxiosInstance;

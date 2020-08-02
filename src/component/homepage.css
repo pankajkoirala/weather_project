@@ -1,14 +1,49 @@
+.cloudus {
+  background-image: url("../assets/cloudus.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.atmospheric {
+  background-image: url("../assets/atmospheric.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.clear {
+  background-image: url("../assets/clear.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.drizzle {
+  background-image: url("../assets/drizzle.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.rain {
+  background-image: url("../assets/rainy.jpeg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.snow {
+  background-image: url("../assets/snow.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.thunderstom {
+  background-image: url("../assets/thunderstom.jpg");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
 .icon {
   height: 200px;
   width: 200px;
   color: aquamarine;
 }
-.sunny {
-  height: 800px;
-  width: 100%;
-  background-image: url("../assets/sunny.jpg");
-  background-repeat: no-repeat;
-  background-size: 100% 1100px;
+
+@media only screen and (max-width: 600px) {
+  .sunny {
+    background-size: 100% 100%;
+  }
 }
 .whethericon {
   height: 100px;
@@ -21,9 +56,21 @@
 }
 .table {
   height: 100px;
-  width: 600px;
+  width: 300px;
   background-color: rgb(154, 156, 156);
 }
+@media only screen and (max-width: 600px) {
+  .table {
+    height: auto;
+    width: 100%;
+    margin: 20px;
+  }
+}
 .search {
-  margin-right: px;
+  margin-left: 100px;
+}
+@media only screen and (max-width: 600px) {
+  .search {
+    margin: 10px;
+  }
 }
