@@ -66,8 +66,6 @@ const WhetherHomepage = (props) => {
           handleChange,
           handleBlur,
           handleSubmit,
-          handleReset,
-          setFieldValue,
           isSubmitting,
         }) => (
           <div>
