@@ -7,54 +7,17 @@ import Axios from "axios";
 let HomepageContainer = () => {
   const [whetherData, setWhetherData] = useState({});
   const [city, setCity] = useState({city:"kathmandu"});
-  const[backGimg,setBackGimg]=useState("")
+
  
 
 
 
   useEffect(() => {
-
-    
-      // if (whetherData.weather?whetherData.weather[0].main:""==="Clouds") {
-      //   return(
-      //     setBackGimg("cloudus")
-      //   )
-      // }else if(whetherData.weather?whetherData.weather[0].main:""==="Atmosphere"){
-      //   return(
-      //     setBackGimg("atmospheric")
-      //   )
-      // }else if(whetherData.weather?whetherData.weather[0].main:""==="Thunderstorm"){
-      //   return(
-      //     setBackGimg("thunderstom")
-      //   )
-      // }else if(whetherData.weather?whetherData.weather[0].main:""==="Drizzle"){
-      //   return(
-      //     setBackGimg("drizzle")
-      //   )
-      // }else if(whetherData.weather?whetherData.weather[0].main:""==="Rain"){
-      //   return(
-      //     setBackGimg("rain")
-      //   )
-      // }else if(whetherData.weather?whetherData.weather[0].main:""==="Snow"){
-      //   return(
-      //     setBackGimg("snow")
-      //   )
-      // }else if(whetherData.weather?whetherData.weather[0].main:""==="Clear"){
-      //   return(
-      //     setBackGimg("clear")
-      //   )
-      // }
-    
-  
-      
-
-   
     Axios.get(
       `https://api.openweathermap.org/data/2.5/weather?q=${city.city}&appid=2d65620666a9ef8b9d205e10d5fdbd8f`
     )
       .then((res) => setWhetherData(res.data))
-      .catch((err) => err);
-    
+      .catch((err) => err);    
   }, [city]);
  
 
@@ -83,6 +46,8 @@ let HomepageContainer = () => {
     maxTemp: (
       parseFloat(whetherData.main ? whetherData.main.temp_max : "") - 273.15
     ).toFixed(2),
+    feellike:(  parseFloat(whetherData.main ? whetherData.main.feels_like : "") - 273.15
+    ).toFixed(2),
     visibility: parseFloat(whetherData.visibility) / 1000,
   };
 
@@ -96,7 +61,6 @@ let HomepageContainer = () => {
     recenttime: new Date(parseFloat(whetherData.dt) * 1000),
   };
 
-  console.log(sunriseAndSunset.recenttime.toTimeString())
   return (
     <HomepageComponent
       whetherData={whetherData}
@@ -104,7 +68,7 @@ let HomepageContainer = () => {
       cityName={cityName}
       sunriseAndSunset={sunriseAndSunset}
       iconarray={iconarray}
-      backGimg={backGimg}
+    
     />
   );
 };

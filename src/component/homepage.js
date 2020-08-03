@@ -1,21 +1,55 @@
-import React from "react";
+import React,{ useState, useEffect} from "react";
 import * as Yup from "yup";
 import "./homepage.css";
 import { Formik } from "formik";
 import { Table, FormGroup, Label, Input } from "reactstrap";
 
 const WhetherHomepage = (props) => {
+  const[backimage,setBackimage]=useState("")
   const whetherinfo = props.whetherData;
 
-  console.log("hello");
+ useEffect(()=>{
+  let weather=whetherinfo.weather?whetherinfo.weather[0].main:""
+
+  if(weather==="Rain"){
+    return(
+      setBackimage("rain")
+    )
+  }else if(weather==="Thunderstorm"){
+    return(
+      setBackimage("thunderstom")
+    )
+  }else if(weather==="Drizzle"){
+    return(
+      setBackimage("drizzle")
+    )
+  }else if(weather==="Snow"){
+    return(
+      setBackimage("snow")
+    )
+  }else if(weather==="Atmosphere"){
+    return(
+      setBackimage("atmospheric")
+    )
+  }else if(weather==="Clear"){
+    return(
+      setBackimage("clear")
+    )
+  }else if(weather==="Clouds"){
+    return(
+      setBackimage("cloudus")
+    )
+  }
+ },[whetherinfo.weather])
+
+ console.log("hello"); // test for how many time function run
   return (
-    <div className="container">
+    <div className={backimage}>
       <Formik
         initialValues={{
           city: "",
         }}
         onSubmit={(values, actions) => {
-          console.log(values);
           props.cityName(values);
         }}
         validationSchema={Yup.object().shape({
@@ -36,7 +70,7 @@ const WhetherHomepage = (props) => {
           setFieldValue,
           isSubmitting,
         }) => (
-          <div className={props.backGimg}>
+          <div>
             <div className="ml-4">
               <div className="d-flex justify-content-start ">
                 <div className="">
@@ -97,9 +131,10 @@ const WhetherHomepage = (props) => {
               <div className="temperature">
                 {props.allTemp.convertKtoC} <sup>o</sup>C
               </div>
+              <div> <h4> Feel like :{ props.allTemp.feellike} <sup>o</sup>C </h4></div>
             </div>
 
-            <div className="  d-flex flex-wrap d-flex ">
+            <div className="  d-flex flex-wrap d-flex bothtable ">
               <Table bordered className="table">
                 <tbody>
                   <tr>
