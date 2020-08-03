@@ -41,8 +41,33 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .sunny {
-    background-size: 100% 100%;
+  .cloudus {
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  .atmospheric {
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  .clear {
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  .drizzle {
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  .rain {
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  .snow {
+    background-size: auto;
+    background-repeat: repeat;
+  }
+  .thunderstom {
+    background-size: auto;
+    background-repeat: repeat;
   }
 }
 .whethericon {
@@ -62,7 +87,7 @@
 @media only screen and (max-width: 600px) {
   .table {
     height: auto;
-    width: 100%;
+    width: auto;
     margin: 20px;
   }
 }
